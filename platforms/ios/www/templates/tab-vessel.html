@@ -1,0 +1,21 @@
+<ion-view view-title="Vessel Info">
+	<ion-content style="background-color:#E8E8E8;">
+          <div class="vessel-search-box">
+                <span class="vessel-search-text">Input Vessel Name to find simple information of her</span>
+                <form>
+                    <div class="vessel-wrapper">
+                        <label class="item item-input vessel-item-input-custom">	 
+                              <input type="search" class="search_key" placeholder="Vessel name" ng-model="data.searchkey">
+                        </label>
+                    </div>
+                    <div class="vessel-wrapper">
+                        <button class="custom-smt-button-right" ng-click="vesselsearch();">Search</button>
+                        <button class="custom-smt-button-left" ng-click="clearsearchkey();">Clear</button>
+                    </div>
+                </form>
+                <div style="clear:both;"></div>
+          </div>
+          <div class="vessel-search-result">
+          </div>
+    </ion-content>
+</ion-view>

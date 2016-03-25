@@ -1,0 +1,36 @@
+<ion-view hide-nav-bar="true" name="login-view">
+  <ion-content  style="background-color:#3C6CA7 !important;">
+  	  <div style="text-align:center;padding-top:60px;padding-bottom:50px;" class="wrpper-login">
+      	<span style="color:white;font-size:26px;font-family:arial;font-weight:600">CHARTERING-SHIPBROKERS</span>
+      	</br>
+        <span style="color:white;font-size:14px;font-family:arial;font-weight:normal;font-style:italic;" >Cargo and tonnage online market place</span>
+      </div>
+      <div style="border-top: 15px solid #2e4a7e;border-bottom: 15px solid #2e4a7e;padding:10px 20px 10px 20px;background-color:white;" class="login-box-wrapper">
+      	  <div class="row" style="padding:0px; background-color:#f0f2f5;margin-bottom:10px;border:2px solid #aaaaaa;border-radius:5px;background-image:">
+  			  <div class="col-10"  style="text-align:center;vertical-align:middle; position:relative">
+              		<button class="button button-icon button-clear ion-person" style="color:white;"></button>
+              </div>
+  			  <div class="col-90">
+              	  <label class="item item-input" style="border:none; margin:0;padding-bottom:7px;border-bottom-right-radius:10px;border-top-right-radius:10px;">	 
+              		  <input class="login-input" type="text" placeholder="Username" ng-model="data.username">
+          		  </label>
+              </div>
+		  </div>
+          <div class="row" style="padding:0px; background-color:#f0f2f5;border:2px solid #aaaaaa;border-radius:5px;">
+  			  <div class="col-10"  style="text-align:center;vertical-align:middle; position:relative">
+              		<button class="button button-icon button-clear ion-locked" style="color:white;"></button>
+              </div>
+  			  <div class="col-90">
+              	  <label class="item item-input" style="border:none; margin:0;padding-bottom:7px;border-bottom-right-radius:10px;border-top-right-radius:10px;">	 
+              		  <input class="login-input" type="password" placeholder="Password" ng-model="data.password">
+          		  </label>
+              </div>
+		  </div>
+      </div>
+      <div class="button-bar" style="padding:0 20px 0 20px">
+  		  <button class="button button-block button-calm" style="background-color:#5487C5;color: white;border:none;font-size:18px;font-weight:600;border-radius:7px" ng-click="login()">LOGIN</button>
+          <button class="button button-block button-calm" style="background-color:transparent;color: white;border:none;font-size:18px;font-weight:600" ng-click="signup()">SIGN UP</button>
+	  </div>
+      <img class="image-fix-height" src="img/Mobile_Home.png" style="width:100%"/>
+  </ion-content>
+</ion-view>

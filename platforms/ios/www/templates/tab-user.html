@@ -1,0 +1,39 @@
+<ion-view hide-nav-bar="false" view-title="My Account" name="signup-view">
+  <ion-content  style="background-color:#f5f5f5!important;">
+<form method="post" action="" id="changepassword-form" class="form">
+	<div style="text-align:center;margin-top:10px;">
+    	<span class="register-title">Change Password</span>
+    </div>
+    <hr>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="currentPassword uneditable-input">Current Password</label>
+        </div>
+        <div class="col-1-3">
+            <input type="password" id="currentPassword" name="currentPassword" class="w238 uneditable-input" autocomplete="off" maxlength="50" size="50"> 
+        </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label class="required" for="newPassword">New Password <span class="required">*</span></label>
+        </div>
+        <div class="col-1-3">
+            <input type="password" id="newPassword" name="newPassword" class="w238 uneditable-input" autocomplete="off" maxlength="50" size="50"> </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label class="required" for="repeatPassword">Confirm New Password <span class="required">*</span></label>
+        </div>
+        <div class="col-1-3">
+            <input type="password" id="repeatPassword" name="repeatPassword" class="w238 uneditable-input" autocomplete="off" maxlength="50" size="50"> </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid center_align">
+        <input type="button" value="Change" name="yt0" class="myButton" ng-click="change()">
+        <input type="button" value="Cancel" name="cancel" class="myButton" ng-click="cancel()">  
+    </div>
+</form>
+</ion-content>
+</ion-view>>

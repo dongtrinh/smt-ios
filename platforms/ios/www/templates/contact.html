@@ -1,0 +1,26 @@
+<form name="contact" id="contact">
+<div class="row">
+    <div class="col col-25">From</div>
+    <div class="col reply-from">{{data.userkey}}( {{data.email}} )</div>
+    <input type="hidden" value="{{data.userkey}}" name="from_name" id="from_name"/>
+    <input type="hidden" value="{{data.email}}" name = "from_email" id="from_email"/>
+</div>
+<div class="row">
+    <div class="col col-25">to</div>
+    <div class="col reply-to">{{replyto}}</div>
+    <input type="hidden" value="{{replyto}}" name="to_name" id="to_name"/>
+    <input type="hidden" value="{{replyemail}}" name="to_email" id="to_email"/>
+</div>
+<div class="row">
+    <div class="col col-25">Subject *</div>
+    <div class="col"><input type="text" name="subject" class="contact-subject"/></div>
+</div>
+<div class="row">
+    <div class="col col-25">Content</div>
+    <div class="col"><textarea rows="10" name="content" class="contact-content"></textarea></div>
+</div>
+<div class="row">
+    <div class="col col-25">Contact Info</div>
+    <div class="col"><textarea rows="10" disabled class="reply-to-info">User: {{data.userkey}}.&#10;Email: {{data.email}}.&#10;Phone: {{data.phone}}.&#10;Mobile: {{data.mobile}}.&#10;Powered by Chartering Ship Brokers (efetechnology.com.vn)</textarea></div>
+</div>
+</form>

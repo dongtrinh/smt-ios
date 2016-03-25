@@ -1,0 +1,29 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top">
+
+  <ion-tab title="Home" icon="icon ion-gear-b" href="#/tab/home" hidden="true">
+          <ion-nav-view name="tab-home"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Tonnage" icon-off="tonnage" icon-on="tonnage" href="#/tab/tonnagelist">
+    <ion-nav-view name="tab-tonnagelist"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Cargo" icon-off="cargo" icon-on="cargo" href="#/tab/cargolist">
+    <ion-nav-view name="tab-cargolist"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Vessel info" icon-off="vessel" icon-on="vessel" href="#/tab/vessel">
+    <ion-nav-view name="tab-vessel"></ion-nav-view>
+  </ion-tab>
+  
+  <ion-tab title="Bunker" icon-on="bunker" icon-off="bunker" href="#/tab/bunker">
+    <ion-nav-view name="tab-bunker"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>

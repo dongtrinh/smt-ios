@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' />
+    <preference name="EnableViewportScale" value="true"/>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet"/>
+    <link href="css/font-awesome.css" rel="stylesheet"/>
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+	<script src="lib/ionic/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript">
+	var cSpeed=9;
+	var cWidth=82;
+	var cHeight=82;
+	var cTotalFrames=9;
+	var cFrameWidth=82;
+	var cImageSrc='img/sprites.png';
+	
+	var cImageTimeout=false;
+	var cIndex=0;
+	var cXpos=0;
+	var cPreloaderTimeout=false;
+	var SECONDS_BETWEEN_FRAMES=0;
+	
+	function startAnimation(){
+		
+		document.getElementById('loaderImage').style.backgroundImage='url('+cImageSrc+')';
+		document.getElementById('loaderImage').style.width=cWidth+'px';
+		document.getElementById('loaderImage').style.height=cHeight+'px';
+		
+		//FPS = Math.round(100/(maxSpeed+2-speed));
+		FPS = Math.round(100/cSpeed);
+		SECONDS_BETWEEN_FRAMES = 1 / FPS;
+		
+		cPreloaderTimeout=setTimeout('continueAnimation()', SECONDS_BETWEEN_FRAMES/1000);
+		
+	}
+	
+	function continueAnimation(){
+		
+		cXpos += cFrameWidth;
+		//increase the index so we know which frame of our animation we are currently on
+		cIndex += 1;
+		 
+		//if our cIndex is higher than our total number of frames, we're at the end and should restart
+		if (cIndex >= cTotalFrames) {
+			cXpos =0;
+			cIndex=0;
+		}
+		
+		if(document.getElementById('loaderImage'))
+			document.getElementById('loaderImage').style.backgroundPosition=(-cXpos)+'px 0';
+		
+		cPreloaderTimeout=setTimeout('continueAnimation()', SECONDS_BETWEEN_FRAMES*1000);
+	}
+	
+	function stopAnimation(){//stops animation
+		clearTimeout(cPreloaderTimeout);
+		cPreloaderTimeout=false;
+	}
+	
+	function imageLoader(s, fun)//Pre-loads the sprites image
+	{
+		clearTimeout(cImageTimeout);
+		cImageTimeout=0;
+		genImage = new Image();
+		genImage.onload=function (){cImageTimeout=setTimeout(fun, 0)};
+		genImage.onerror=new Function('alert(\'Could not load the image\')');
+		genImage.src=s;
+	}
+	
+	//The following code starts the animation
+	
+</script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="AppCtrl">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <div class="se-pre-con"><div id="loaderImage" style="margin:auto;"></div></div>
+    <script>new imageLoader(cImageSrc, 'startAnimation()');</script> 
+    <div class="se-pre-con-wrpapper"></div>
+    
+    <ion-side-menus>
+        
+        <ion-side-menu-content ng-controller="NavCtrl">
+          <ion-nav-bar align-title="center" no-tap-scroll="true" class="bar-positive">
+            <ion-nav-back-button class="button-icon button-clear ion-arrow-left-c">
+            </ion-nav-back-button>
+          
+            <ion-nav-buttons side="left">
+              <button class="button button-icon button-clear ion-navicon custom-button-background" ng-click="showMenu()">
+              </button>
+            </ion-nav-buttons>
+
+            <ion-nav-buttons side="right">
+              <button class="button button-icon button-clear ion-gear-b custom-button-background" ng-click="showRightMenu()">
+              </button>
+            </ion-nav-buttons>
+          </ion-nav-bar>
+          	<ion-nav-view></ion-nav-view>
+        </ion-side-menu-content> 
+        
+        <ion-side-menu side="left">
+          <ion-header-bar class="bar bar-header bar-assertive" style="background-color:#0B3567;">
+            <h1 class="title">Main Navigation</h1>
+          </ion-header-bar>
+          <ion-content has-header="true">
+            <ul class="list">
+              <li>
+                <a class="item" menu-close nav-clear href="#/tab/home">Home</a>
+              </li>
+              <li>
+                <a class="item" menu-close href="#/tab/tonnagelist">Tonnage Open</a>
+              </li>
+              <li>
+                <a class="item" menu-close href="#/tab/cargolist">Cargo Open</a>
+              </li>
+               <li>
+                <a class="item" menu-close href="#tab/vessel">Vessel Info</a>
+              </li>
+               <li>
+                <a class="item" menu-close href="#/tab/bunker">Bunker Price</a>
+              </li>
+            </ul>
+          </ion-content>
+        </ion-side-menu>
+      
+        <ion-side-menu side="right" ng-controller="NavRightMenu">
+          <ion-header-bar class="bar bar-header " style="background-color:#0B3567;">
+            <h1 class="title" style="color:white;">Settings</h1>
+          </ion-header-bar>
+          <ion-content>
+            <ul class="list">
+              <li>
+                <a class="item" menu-close nav-clear href="#/notify">Notification</a>
+              </li>
+              <li>
+                <a class="item" menu-close nav-clear href="#/my-account">My Account</a>
+              </li>
+              <li>
+                <a class="item" menu-close nav-clear ng-click="logout()">Logout</a>
+              </li>
+            </ul>
+          </ion-content>
+        </ion-side-menu>
+        
+      </ion-side-menus>     
+        <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+  </body>
+</html>

@@ -1,0 +1,421 @@
+<ion-view hide-nav-bar="true" view-title="Sign up" name="signup-view">
+  <ion-header-bar class="bar-positive bar bar-header" align-title="center" no-tap-scroll="true">
+  	<div class="title title-center header-item" style="transform: translate3d(0px, 0px, 0px); left: 80px; right: 80px;">
+    	Sign up
+    </div>
+  </ion-header-bar>
+  <ion-content  style="background-color:#f5f5f5!important;">
+<form method="post" action="http://chartering-shipbrokers.com/api/signup" id="signup-form" class="form">
+	<div style="text-align:center;margin-top:10px;">
+    	<span class="register-title">Register Form</span>
+    </div>
+    <hr>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_user_key">UserId</label>
+        </div>
+        <div class="col-1-3">
+            <input type="text" id="User_user_key" name="User[user_key]" class="w238 uneditable-input" autocomplete="off" maxlength="128" size="50">
+            <div class="userKeyAlert"></div>
+        </div>
+        <div class="col-1-3 left_align">
+            <button type="button" id="check_userId" ng-click="checkid()">Check Availability of UserID</button>
+        </div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_password uneditable-input">Password</label>
+        </div>
+        <div class="col-1-3">
+            <input type="password" id="User_password" name="User[password]" class="w238 uneditable-input" autocomplete="off" maxlength="50" size="50"> </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label class="required" for="User_password_repeat">Confirm Password <span class="required">*</span></label>
+        </div>
+        <div class="col-1-3">
+            <input type="password" id="User_password_repeat" name="User[password_repeat]" class="w238 uneditable-input" autocomplete="off" maxlength="50" size="50"> </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_email">Email</label>
+        </div>
+        <div class="col-1-3">
+            <input type="text" id="User_email" name="User[email]" class="w238 uneditable-input" autocomplete="off" maxlength="128" size="50"> </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label class="required" for="User_email_repeat">Confirm Email <span class="required">*</span></label>
+        </div>
+        <div class="col-1-3">
+            <input type="text" id="User_email_repeat" name="User[email_repeat]" class="w238 uneditable-input" autocomplete="off" maxlength="128" size="50"> </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_username">Name</label>
+        </div>
+        <div class="col-1-3">
+            <input type="text" id="User_username" name="User[username]" class="w238 uneditable-input" autocomplete="off" maxlength="128" size="50"> </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_job_category_id">Job Category</label>
+        </div>
+        <div class="col-1-3">
+            <select id="User_job_category_id" name="User[job_category_id]" class="uneditable-input">
+                <option value="">---select job category---</option>
+                <option value="9">Others</option>
+                <option value="17">CONTAINER</option>
+                <option value="16">LIQUID</option>
+                <option value="15">CHEMICAL</option>
+                <option value="14">BULK</option>
+                <option value="18">TANKER </option>
+            </select>
+        </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_job_role_id">Job Role</label>
+        </div>
+        <div class="col-1-3">
+            <select id="User_job_role_id" name="User[job_role_id]" class="uneditable-input">
+                <option value="">---select job role---</option>
+                <option value="12">TRADER</option>
+                <option value="11">OPERATOR</option>
+                <option value="10">AGENCY</option>
+                <option value="9">SHIPOWN</option>
+                <option value="8">BROKER</option>
+                <option value="13">OTHER</option>
+                <option value="14">CHARTER</option>
+                <option value="15">SHIP MANAGER</option>
+                <option value="16">BUNKER</option>
+            </select>
+        </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_country_id">Country</label>
+        </div>
+        <div class="col-1-3">
+            <select id="User_country_id" name="User[country_id]" class="uneditable-input">
+                <option value="">---select country---</option>
+                <option value="243">Afghanistan</option>
+                <option value="244">Aland Islands</option>
+                <option value="245">Albania</option>
+                <option value="246">Algeria</option>
+                <option value="247">American Samoa</option>
+                <option value="248">Andorra</option>
+                <option value="249">Angola</option>
+                <option value="250">Anguilla</option>
+                <option value="251">Antarctica</option>
+                <option value="252">Antigua and Barbuda</option>
+                <option value="253">Argentina</option>
+                <option value="254">Armenia</option>
+                <option value="255">Aruba</option>
+                <option value="256">Australia</option>
+                <option value="257">Austria</option>
+                <option value="258">Azerbaijan</option>
+                <option value="259">Bahamas</option>
+                <option value="260">Bahrain</option>
+                <option value="261">Bangladesh</option>
+                <option value="262">Barbados</option>
+                <option value="263">Belarus</option>
+                <option value="264">Belgium</option>
+                <option value="265">Belize</option>
+                <option value="266">Benin</option>
+                <option value="267">Bermuda</option>
+                <option value="268">Bhutan</option>
+                <option value="269">Bolivia, Plurinational State of</option>
+                <option value="270">Bonaire, Sint Eustatius and Saba</option>
+                <option value="271">Bosnia and Herzegovina</option>
+                <option value="272">Botswana</option>
+                <option value="273">Bouvet Island</option>
+                <option value="274">Brazil</option>
+                <option value="275">British Indian Ocean Territory</option>
+                <option value="276">Brunei Darussalam</option>
+                <option value="277">Bulgaria</option>
+                <option value="278">Burkina Faso</option>
+                <option value="279">Burundi</option>
+                <option value="280">Cambodia</option>
+                <option value="281">Cameroon</option>
+                <option value="282">Canada</option>
+                <option value="283">Cape Verde</option>
+                <option value="284">Cayman Islands</option>
+                <option value="285">Central African Republic</option>
+                <option value="286">Chad</option>
+                <option value="287">Chile</option>
+                <option value="288">China</option>
+                <option value="289">Christmas Island</option>
+                <option value="290">Cocos (Keeling) Islands</option>
+                <option value="291">Colombia</option>
+                <option value="292">Comoros</option>
+                <option value="293">Congo</option>
+                <option value="294">Congo, The Democratic Republic of the</option>
+                <option value="295">Cook Islands</option>
+                <option value="296">Costa Rica</option>
+                <option value="297">Cote d'Ivoire</option>
+                <option value="298">Croatia</option>
+                <option value="299">Cuba</option>
+                <option value="300">Curacao</option>
+                <option value="301">Cyprus</option>
+                <option value="302">Czech Republic</option>
+                <option value="303">Denmark</option>
+                <option value="304">Djibouti</option>
+                <option value="305">Dominica</option>
+                <option value="306">Dominican Republic</option>
+                <option value="307">Ecuador</option>
+                <option value="308">Egypt</option>
+                <option value="309">El Salvador</option>
+                <option value="310">Equatorial Guinea</option>
+                <option value="311">Eritrea</option>
+                <option value="312">Estonia</option>
+                <option value="313">Ethiopia</option>
+                <option value="314">Falkland Islands (Malvinas)</option>
+                <option value="315">Faroe Islands</option>
+                <option value="316">Fiji</option>
+                <option value="317">Finland</option>
+                <option value="318">France</option>
+                <option value="319">French Guiana</option>
+                <option value="320">French Polynesia</option>
+                <option value="321">French Southern Territories</option>
+                <option value="322">Gabon</option>
+                <option value="323">Gambia</option>
+                <option value="324">Georgia</option>
+                <option value="325">Germany</option>
+                <option value="326">Ghana</option>
+                <option value="327">Gibraltar</option>
+                <option value="328">Greece</option>
+                <option value="329">Greenland</option>
+                <option value="330">Grenada</option>
+                <option value="331">Guadeloupe</option>
+                <option value="332">Guam</option>
+                <option value="333">Guatemala</option>
+                <option value="334">Guernsey</option>
+                <option value="335">Guinea</option>
+                <option value="336">Guinea-Bissau</option>
+                <option value="337">Guyana</option>
+                <option value="338">Haiti</option>
+                <option value="339">Heard Island and McDonald Islands</option>
+                <option value="340">Holy See (Vatican City State)</option>
+                <option value="341">Honduras</option>
+                <option value="342">Hong Kong</option>
+                <option value="343">Hungary</option>
+                <option value="344">Iceland</option>
+                <option value="345">India</option>
+                <option value="346">Indonesia</option>
+                <option value="347">Iran, Islamic Republic of</option>
+                <option value="348">Iraq</option>
+                <option value="349">Ireland</option>
+                <option value="350">Isle of Man</option>
+                <option value="351">Israel</option>
+                <option value="352">Italy</option>
+                <option value="353">Jamaica</option>
+                <option value="354">Japan</option>
+                <option value="355">Jersey</option>
+                <option value="356">Jordan</option>
+                <option value="357">Kazakhstan</option>
+                <option value="358">Kenya</option>
+                <option value="359">Kiribati</option>
+                <option value="360">Korea, Democratic People's Republic of</option>
+                <option value="361">Korea, Republic of</option>
+                <option value="362">Kuwait</option>
+                <option value="363">Kyrgyzstan</option>
+                <option value="364">Lao People's Democratic Republic</option>
+                <option value="365">Latvia</option>
+                <option value="366">Lebanon</option>
+                <option value="367">Lesotho</option>
+                <option value="368">Liberia</option>
+                <option value="369">Libyan Arab Jamahiriya</option>
+                <option value="370">Liechtenstein</option>
+                <option value="371">Lithuania</option>
+                <option value="372">Luxembourg</option>
+                <option value="373">Macao</option>
+                <option value="374">Macedonia, The former Yugoslav Republic of</option>
+                <option value="375">Madagascar</option>
+                <option value="376">Malawi</option>
+                <option value="377">Malaysia</option>
+                <option value="378">Maldives</option>
+                <option value="379">Mali</option>
+                <option value="380">Malta</option>
+                <option value="381">Marshall Islands</option>
+                <option value="382">Martinique</option>
+                <option value="383">Mauritania</option>
+                <option value="384">Mauritius</option>
+                <option value="385">Mayotte</option>
+                <option value="386">Mexico</option>
+                <option value="387">Micronesia, Federated States of</option>
+                <option value="388">Moldova, Republic of</option>
+                <option value="389">Monaco</option>
+                <option value="390">Mongolia</option>
+                <option value="391">Montenegro</option>
+                <option value="392">Montserrat</option>
+                <option value="393">Morocco</option>
+                <option value="394">Mozambique</option>
+                <option value="395">Myanmar</option>
+                <option value="396">Namibia</option>
+                <option value="397">Nauru</option>
+                <option value="398">Nepal</option>
+                <option value="399">Netherlands</option>
+                <option value="400">New Caledonia</option>
+                <option value="401">New Zealand</option>
+                <option value="402">Nicaragua</option>
+                <option value="403">Niger</option>
+                <option value="404">Nigeria</option>
+                <option value="405">Niue</option>
+                <option value="406">Norfolk Island</option>
+                <option value="407">Northern Mariana Islands</option>
+                <option value="408">Norway</option>
+                <option value="409">Oman</option>
+                <option value="410">Pakistan</option>
+                <option value="411">Palau</option>
+                <option value="412">Palestinian Territory, Occupied</option>
+                <option value="413">Panama</option>
+                <option value="414">Papua New Guinea</option>
+                <option value="415">Paraguay</option>
+                <option value="416">Peru</option>
+                <option value="417">Philippines</option>
+                <option value="418">Pitcairn</option>
+                <option value="419">Poland</option>
+                <option value="420">Portugal</option>
+                <option value="421">Puerto Rico</option>
+                <option value="422">Qatar</option>
+                <option value="423">Reunion</option>
+                <option value="424">Romania</option>
+                <option value="425">Russian Federation</option>
+                <option value="426">Rwanda</option>
+                <option value="427">Saint Barthelemy</option>
+                <option value="428">Saint Helena, Ascension and Tristan Da Cunha</option>
+                <option value="429">Saint Kitts and Nevis</option>
+                <option value="430">Saint Lucia</option>
+                <option value="431">Saint Martin (French Part)</option>
+                <option value="432">Saint Pierre and Miquelon</option>
+                <option value="433">Saint Vincent and The Grenadines</option>
+                <option value="434">Samoa</option>
+                <option value="435">San Marino</option>
+                <option value="436">Sao Tome and Principe</option>
+                <option value="437">Saudi Arabia</option>
+                <option value="438">Senegal</option>
+                <option value="439">Serbia</option>
+                <option value="440">Seychelles</option>
+                <option value="441">Sierra Leone</option>
+                <option value="442">Singapore</option>
+                <option value="443">Sint Maarten (Dutch Part)</option>
+                <option value="444">Slovakia</option>
+                <option value="445">Slovenia</option>
+                <option value="446">Solomon Islands</option>
+                <option value="447">Somalia</option>
+                <option value="448">South Africa</option>
+                <option value="449">South Georgia and The South Sandwich Islands</option>
+                <option value="450">South Sudan</option>
+                <option value="451">Spain</option>
+                <option value="452">Sri Lanka</option>
+                <option value="453">Sudan</option>
+                <option value="454">Suriname</option>
+                <option value="455">Svalbard and Jan Mayen</option>
+                <option value="456">Swaziland</option>
+                <option value="457">Sweden</option>
+                <option value="458">Switzerland</option>
+                <option value="459">Syrian Arab Republic</option>
+                <option value="460">Taiwan, Province of China</option>
+                <option value="461">Tajikistan</option>
+                <option value="462">Tanzania, United Republic of</option>
+                <option value="463">Thailand</option>
+                <option value="464">Timor-Leste</option>
+                <option value="465">Togo</option>
+                <option value="466">Tokelau</option>
+                <option value="467">Tonga</option>
+                <option value="468">Trinidad and Tobago</option>
+                <option value="469">Tunisia</option>
+                <option value="470">Turkey</option>
+                <option value="471">Turkmenistan</option>
+                <option value="472">Turks and Caicos Islands</option>
+                <option value="473">Tuvalu</option>
+                <option value="474">Uganda</option>
+                <option value="475">Ukraine</option>
+                <option value="476">United Arab Emirates</option>
+                <option value="477">United Kingdom</option>
+                <option value="478">United States</option>
+                <option value="479">United States Minor Outlying Islands</option>
+                <option value="480">Uruguay</option>
+                <option value="481">Uzbekistan</option>
+                <option value="482">Vanuatu</option>
+                <option value="483">Venezuela, Bolivarian Republic of</option>
+                <option value="484">Viet Nam</option>
+                <option value="485">Virgin Islands, British</option>
+                <option value="486">Virgin Islands, U.S.</option>
+                <option value="487">Wallis and Futuna</option>
+                <option value="488">Western Sahara</option>
+                <option value="489">Yemen</option>
+                <option value="490">Zambia</option>
+                <option value="491">Zimbabwe</option>
+            </select>
+        </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_company_name">Company Name</label>
+        </div>
+        <div class="col-1-3">
+            <input type="text" id="User_company_name" name="User[company_name]" class="w238 uneditable-input" autocomplete="off" maxlength="128" size="50"> </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_phone">Phone</label>
+        </div>
+        <div class="col-1-3">
+            <input type="text" id="User_phone" name="User[phone]" class="w238 uneditable-input" autocomplete="off" maxlength="128" size="50">
+        </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_fax">Fax</label>
+        </div>
+        <div class="col-1-3">
+            <input type="text" id="User_fax" name="User[fax]" class="w238 uneditable-input" autocomplete="off" maxlength="128" size="50">
+        </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_mobile">Mobile</label>
+        </div>
+        <div class="col-1-3">
+            <input type="text" id="User_mobile" name="User[mobile]" class="w238 uneditable-input" autocomplete="off" maxlength="128" size="50">
+        </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_profile_allow">Profile Allow</label>
+        </div>
+        <div class="col-1-3">
+            <input type="hidden" name="User[profile_allow]" value="0" id="ytUser_profile_allow">
+            <input type="checkbox" value="1" id="User_profile_allow" name="User[profile_allow]" style="margin-top: 10px;">
+        </div>
+        <div class="col-1-3"></div>
+    </div>
+    <div class="grid line_bottom">
+        <div class="col-1-3 right_align">
+            <label for="User_company_background">Company Background</label>
+        </div>
+       <div class="col-1-3">
+            <textarea id="User_company_background" name="User[company_background]" class="uneditable-input-textarea"></textarea>
+        </div>
+    </div>
+    <div class="grid center_align">
+        <input type="button" value="Sign up" name="yt0" class="myButton" ng-click="signup()">
+        <input type="button" value="Cancel" name="cancel" class="myButton" ng-click="cancel()">  
+    </div>
+</form>
+</ion-content>
+</ion-view>>
